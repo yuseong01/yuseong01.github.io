@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(15, 15, 15, 0.9);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: white;
+            color: #0f0f0f;
+        }
+        
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            display: flex;
+            padding: 0 5%;
+            width: 100%;
+            margin-top: 80px;
+            padding-bottom: 40px;
+        }
+        
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .qr-section {
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .qr-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .qr-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .headline {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            transition-delay: 0.2s;
+        }
+        
+        .headline.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .laptop-icon {
+            width: 80px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            transition-delay: 0.3s;
+        }
+        
+        .laptop-icon.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            transition-delay: 0.4s;
+        }
+        
+        .title.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            transition-delay: 0.5s;
+        }
+        
+        .description.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            transition-delay: 0.6s;
+        }
+        
+        .cta-buttons.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .button {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .primary-button {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .primary-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .button-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* Responsive styles - Improved for mobile */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                margin-top: 100px;
+            }
+            
+            .left-side, .right-side {
+                width: 100%;
+                padding: 20px 0;
+            }
+            
+            .headline {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+            
+            .title {
+                font-size: 32px;
+            }
+            
+            .description {
+                font-size: 16px;
+            }
+            
+            .qr-section {
+                margin-bottom: 20px;
+            }
+            
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .laptop-icon {
+                width: 60px;
+                margin-bottom: 15px;
+            }
+            
+            .nav-button {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+        }
+        
+        /* Additional mobile optimizations */
+        @media (max-width: 576px) {
+            nav {
+                padding: 15px 5%;
+            }
+            
+            .hero-content {
+                margin-top: 80px;
+                padding: 0 15px;
+                padding-bottom: 30px;
+            }
+            
+            .headline {
+                font-size: 28px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .description {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .cta-buttons {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <a href="#" class="logo">Yuseong Portfolio</a>
+        <button class="nav-button">BUTTON</button>
+    </nav>
+    
+    <!-- Hero section -->
+    <section class="hero">
+        <img src="C:\Users\YUSEONG\OneDrive\사진\me\KakaoTalk_20250308_014936580_02.jpg" alt="Night view of a city" class="hero-image">
+        
+        <div class="hero-content">
+            <div class="left-side">
+                <div class="headline">
+                    View More Comfortably<br>
+                    On Mobile Screen.
+                </div>
+                
+                <div class="qr-section">
+                    <p class="qr-title">Scan the right QR code</p>
+                    <img src="C:\Users\YUSEONG\OneDrive\사진\me\유성이깃허브\1Do6t.png" alt="QR Code" class="qr-code">
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <img src="C:\Users\YUSEONG\OneDrive\사진\me\KakaoTalk_20250308_014936580_01.jpg" alt="Laptop" class="laptop-icon">
+                
+                <h1 class="title">Creative Developer<br>with Vision.</h1>
+                
+                <p class="description">Meet the indie band Volt.X. If you'd like to<br>collaborate or commission a performance.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="button primary-button">Get in touch</a>
+                    <a href="#" class="button primary-button">
+                        <span class="button-icon">ⓘ</span>
+                        Get to know me
+                    </a>
+                    <a href="#" class="button primary-button">
+                        <span class="button-icon">🔍</span>
+                        Explore my performance
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all animated elements
+            const elements = [
+                document.querySelector('.headline'),
+                document.querySelector('.qr-section'),
+                document.querySelector('.laptop-icon'),
+                document.querySelector('.title'),
+                document.querySelector('.description'),
+                document.querySelector('.cta-buttons')
+            ];
+            
+            // Add active class with a slight delay for each element
+            setTimeout(() => {
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('active');
+                    }, index * 200);
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
