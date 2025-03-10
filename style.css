@@ -217,26 +217,28 @@ nav {
 }
 
 /* Image Slider Section */
-.image-slider {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 100px; /* Hero section과 겹치지 않도록 조정 */
-}
-
 .slider-container {
     display: flex;
-    transition: transform 1s ease;
+    overflow: hidden;
+    width: 100%;
 }
 
 .slider-item {
-    min-width: 100%;
-    transition: transform 1s ease;
+    flex-shrink: 0;
+    width: 33.33%;
+    margin-right: 10px;
+}
+
+.slider-item:last-child {
+    margin-right: 0;
 }
 
 .slider-item img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
+
 
 /* Responsive styles - Improved for mobile(태블릿) */
 @media (max-width: 992px) {
