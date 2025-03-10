@@ -89,7 +89,7 @@ nav {
 }
 
 .qr-section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease;
@@ -106,8 +106,9 @@ nav {
 }
 
 .qr-code {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
 }
 
 .headline {
@@ -296,4 +297,3 @@ nav {
         width: 100%;
     }
 }
-</style>
