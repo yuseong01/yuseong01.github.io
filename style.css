@@ -232,12 +232,12 @@ nav {
 .slider-container {
     display: flex;
     transition: transform 0.5s ease;
-    width: 300%; 
+    width: 300%; /* 이미지 슬라이더의 컨테이너는 3배 크기 */
 }
 
 .slider-item {
-    width: 33.333%; 
-    flex-shrink: 0;
+    width: 33.333%; /* 슬라이드 아이템의 너비는 전체의 1/3 */
+    flex-shrink: 0; /* 아이템이 축소되지 않도록 설정 */
 }
 
 .slider-item img {
