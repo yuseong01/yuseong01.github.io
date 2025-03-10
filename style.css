@@ -118,7 +118,7 @@ nav {
     line-height: 1.2;
     margin-bottom: 20px;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: all 1s ease;
     transition-delay: 0.2s;
 }
@@ -215,7 +215,7 @@ nav {
     font-size: 20px;
 }
 
-/* Responsive styles - Improved for mobile */
+/* Responsive styles - Improved for mobile(태블릿) */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
@@ -266,7 +266,7 @@ nav {
     }
 }
 
-/* Additional mobile optimizations */
+/* Additional mobile optimizations(스마트폰) */
 @media (max-width: 576px) {
     nav {
         padding: 15px 5%;
@@ -280,7 +280,7 @@ nav {
     
     .headline {
         font-size: 28px;
-        transform: translateY(100px); 
+        transform: translateY(10px); 
     }
     
     .title {
