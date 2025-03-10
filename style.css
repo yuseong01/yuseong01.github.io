@@ -278,6 +278,7 @@ nav {
     
     .headline {
         font-size: 28px;
+        transform: translateY(10px); 
     }
     
     .title {
