@@ -49,7 +49,7 @@ nav {
 
 /* Hero section */
 .hero {
-    min-height: 150vh;
+    min-height: 150dvh;
     display: flex;
     position: relative;
     overflow: hidden;
