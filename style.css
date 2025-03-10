@@ -118,7 +118,7 @@ nav {
     line-height: 1.2;
     margin-bottom: 20px;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(10px);
     transition: all 1s ease;
     transition-delay: 0.2s;
 }
@@ -147,7 +147,7 @@ nav {
     font-weight: 700;
     margin-bottom: 15px;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
     transition: all 1s ease;
     transition-delay: 0.4s;
 }
@@ -230,6 +230,7 @@ nav {
     .headline {
         font-size: 32px;
         margin-bottom: 15px;
+        transform: translateY(10px);
     }
     
     .title {
