@@ -75,19 +75,11 @@ nav {
     align-items: flex-start;  
 }
 
-.left-side {
+.left-side, .right-side {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.right-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .qr-section {
@@ -130,151 +122,12 @@ nav {
     transform: translateY(0);
 }
 
-.laptop-icon {
-    width: 80px;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-    transition-delay: 0.3s;
-}
-
-.laptop-icon.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.title {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 1s ease;
-    transition-delay: 0.4s;
-}
-
-.title.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.description {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-    transition-delay: 0.5s;
-}
-
-.description.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-    transition-delay: 0.6s;
-}
-
-.cta-buttons.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.primary-button {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.primary-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.button-icon {
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-/* Responsive styles - Improved for mobile(태블릿) */
-@media (max-width: 992px) {
-    .hero-content {
-        flex-direction: column;
-        margin-top: 100px;
-    }
-    
-    .left-side, .right-side {
-        width: 100%;
-        padding: 20px 0;
-    }
-    
-    .headline {
-        font-size: 32px;
-        margin-bottom: 15px;
-        transform: translateY(10px);
-    }
-    
-    .title {
-        font-size: 32px;
-    }
-    
-    .description {
-        font-size: 16px;
-    }
-    
-    .qr-section {
-        margin-bottom: 20px;
-    }
-    
-    .qr-code {
-        width: 80px;
-        height: 80px;
-        border-radius: 10px;
-
-    }
-    
-    .laptop-icon {
-        width: 60px;
-        margin-bottom: 15px;
-    }
-    
-    .nav-button {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
-    
-    .logo {
-        font-size: 20px;
-    }
-}
-
-/* Additional mobile optimizations(스마트폰) */
+/* 스마트폰 */
 @media (max-width: 576px) {
     nav {
         padding: 15px 5%;
     }
-    
+
     .hero-content {
         margin-top: 80px;
         padding: 0 15px;
@@ -302,5 +155,56 @@ nav {
     
     .cta-buttons {
         width: 100%;
+    }
+}
+
+/* 노트북/태블릿 */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .headline {
+        font-size: 32px;
+        margin-bottom: 15px;
+        transform: translateY(10px);
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .qr-section {
+        margin-bottom: 20px;
+    }
+
+    .qr-code {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+
+    .laptop-icon {
+        width: 60px;
+        margin-bottom: 15px;
+    }
+
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
     }
 }
