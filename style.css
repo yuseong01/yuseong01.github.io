@@ -217,28 +217,35 @@ nav {
 }
 
 /* Image Slider Section */
+.image-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .slider-container {
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    transition: transform 0.5s ease;
+    width: 300%; 
 }
 
 .slider-item {
+    width: 33.333%; 
     flex-shrink: 0;
-    width: 33.33%;
-    margin-right: 10px;
-}
-
-.slider-item:last-child {
-    margin-right: 0;
 }
 
 .slider-item img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
+    display: block;
 }
-
 
 /* Responsive styles - Improved for mobile(태블릿) */
 @media (max-width: 992px) {
