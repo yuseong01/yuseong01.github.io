@@ -270,14 +270,14 @@ nav {
 
 /* Additional mobile optimizations(스마트폰) */
 @media (max-width: 576px) {
-    nav {
+    /* nav {
         padding: 15px 5%;
-    }
+    } */
     
     .hero-content {
-        /* margin-top: 80px; */
-        /* padding: 0 15px; */
-        /* padding-bottom: 30px; */
+        margin-top: 80px;
+        padding: 0 15px;
+        padding-bottom: 30px;
     }
     
     .headline {
