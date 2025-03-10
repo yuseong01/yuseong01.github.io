@@ -216,6 +216,28 @@ nav {
     font-size: 20px;
 }
 
+/* Image Slider Section */
+.image-slider {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px; /* Hero section과 겹치지 않도록 조정 */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.slider-item {
+    min-width: 100%;
+    transition: transform 1s ease;
+}
+
+.slider-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Responsive styles - Improved for mobile(태블릿) */
 @media (max-width: 992px) {
     .hero-content {
