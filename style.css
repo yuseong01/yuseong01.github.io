@@ -135,6 +135,33 @@ nav {
     opacity: 1;
     transform: translateY(0);
 }
+.button {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.primary-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.primary-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
 
 /* 스마트폰 */
 @media (max-width: 576px) {
