@@ -245,7 +245,7 @@ nav {
 }
 
 .slider-item img {
-    width: 100%;
+    width: 33.3%;
     max-height: 300px;
     object-fit: contain;
     display: block;
