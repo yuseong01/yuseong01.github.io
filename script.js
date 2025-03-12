@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // 이미지 슬라이더
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
-    let currentPosition = 0;
     const slideSpeed = 0.5; 
 
     if (sliderContainer && sliderItems.length > 0) {
@@ -34,16 +33,25 @@ document.addEventListener('DOMContentLoaded', function () {
         firstItemsClone.forEach(clone => {
             sliderContainer.appendChild(clone);
         });
+
+        // **초기 위치를 첫 번째 이미지 너비만큼 왼쪽으로 이동**
+        const itemWidth = sliderItems[0].offsetWidth;
+        let currentPosition = -itemWidth;  
+        sliderContainer.style.transform = `translateX(${currentPosition}px)`;
+ 
         
         function animateSlider() {
             currentPosition -= slideSpeed;
             
             // 첫 번째 이미지가 완전히 사라지면 위치 리셋
-            const itemWidth = sliderItems[0].offsetWidth;
+            //const itemWidth = sliderItems[0].offsetWidth;
+            
             if (Math.abs(currentPosition) >= itemWidth) {                
                 // 첫 번째 아이템을 마지막으로 이동 (DOM 재정렬)
                 const firstItem = sliderContainer.firstElementChild;
                 sliderContainer.appendChild(firstItem);
+                
+                //위치조정
                 currentPosition += itemWidth;
             }
             
