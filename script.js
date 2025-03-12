@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
     let currentPosition = 0;
-    const slideSpeed = 0.5; // 슬라이드 속도 (픽셀/프레임)
+    const slideSpeed = 0.5;
 
-    // 슬라이더가 있을 경우만 실행
+
     if (sliderContainer && sliderItems.length > 0) {
-        // 슬라이더 아이템 복제하여 무한 스크롤 효과 만들기
+        // 무한 스크롤 
         const firstItemsClone = Array.from(sliderItems).slice(0, 3).map(item => {
             const clone = item.cloneNode(true);
             return clone;
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             sliderContainer.appendChild(clone);
         });
 
-        // 애니메이션 함수
         function animateSlider() {
             currentPosition -= slideSpeed;
 
@@ -50,18 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 sliderContainer.appendChild(firstItem);
             }
 
-            // 실제 이동 적용
             sliderContainer.style.transform = `translateX(${currentPosition}px)`;
 
-            // 애니메이션 계속 실행
             requestAnimationFrame(animateSlider);
         }
 
-        // CSS 초기 설정
         sliderContainer.style.display = 'flex';
-        sliderContainer.style.transition = 'none'; // 부드러운 애니메이션을 위해 CSS 트랜지션 제거
+        sliderContainer.style.transition = 'none'; 
 
-        // 애니메이션 시작
         requestAnimationFrame(animateSlider);
     }
 });
