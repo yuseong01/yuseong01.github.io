@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentPosition -= slideSpeed;
 
             // 첫 번째 이미지가 완전히 사라지면 위치 리셋
-            const itemWidth = sliderItems[0].offsetWidth;
+            const itemWidth = sliderItems[1].offsetWidth;
             if (Math.abs(currentPosition) >= itemWidth) {
                 currentPosition += itemWidth;
 
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             requestAnimationFrame(animateSlider);
         }
 
-        // CSS 초기 설정
         sliderContainer.style.display = 'flex';
         sliderContainer.style.transition = 'none'; // 부드러운 애니메이션을 위해 CSS 트랜지션 제거
 
