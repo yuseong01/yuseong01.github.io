@@ -233,7 +233,7 @@ nav {
     display: flex;
     padding: 0 5%;
     padding-bottom: 40px;
-    /* transition: transform 0.5s ease; */
+    transition: transform 0.5s linear;
     width: 100%;
     align-items: flex-start;  
 }
