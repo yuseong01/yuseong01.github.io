@@ -17,43 +17,45 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, 300);
 
-       // 이미지 슬라이더 기능
-       const sliderContainer = document.querySelector('.slider-container');
-       const sliderItems = document.querySelectorAll('.slider-item');
-       let currentIndex = 0;
-       
-       // 슬라이더 컨테이너 너비 설정 - 이미지가 모두 표시되도록 함
-       if (sliderContainer) {
-           sliderContainer.style.width = `${sliderItems.length * 100}%`;
-           sliderItems.forEach(item => {
-               item.style.width = `${100 / sliderItems.length}%`;
-           });
-       }
-       
-       // 3초마다 이미지 슬라이드
-       const slideInterval = setInterval(() => {
-           if (!sliderContainer) return; // 슬라이더가 없으면 중단
-           
-           currentIndex++;
-           
-           if (currentIndex >= sliderItems.length) {
-               sliderContainer.style.transition = 'transform 0.5s ease';
-               sliderContainer.style.transform = `translateX(-${(currentIndex) * 100 / sliderItems.length}%)`;
-               
-               // 마지막 슬라이드 후 첫 슬라이드로 돌아가기
-               setTimeout(() => {
-                   sliderContainer.style.transition = 'none'; // 트랜지션 효과 제거
-                   currentIndex = 0;
-                   sliderContainer.style.transform = `translateX(0)`; // 첫 번째 이미지로 돌아가기
-                   
-                   // 트랜지션 다시 활성화
-                   setTimeout(() => {
-                       sliderContainer.style.transition = 'transform 0.5s ease';
-                   }, 50);
-               }, 500);
-           } else {
-               sliderContainer.style.transition = 'transform 0.5s ease';
-               sliderContainer.style.transform = `translateX(-${(currentIndex) * 100 / sliderItems.length}%)`;
-           }
-       }, 3000);
+    // 이미지 슬라이더
+    const sliderContainer = document.querySelector('.slider-container');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    let currentPosition = 0;
+    const slideSpeed = 0.5; 
+
+    if (sliderContainer && sliderItems.length > 0) {
+        //무한 스크롤 효과 만들기
+        const firstItemsClone = Array.from(sliderItems).slice(0, 3).map(item => {
+            const clone = item.cloneNode(true);
+            return clone;
+        });
+        
+        // 복제된 아이템을 슬라이더 끝에 추가
+        firstItemsClone.forEach(clone => {
+            sliderContainer.appendChild(clone);
+        });
+        
+        function animateSlider() {
+            currentPosition -= slideSpeed;
+            
+            // 첫 번째 이미지가 완전히 사라지면 위치 리셋
+            const itemWidth = sliderItems[0].offsetWidth;
+            if (Math.abs(currentPosition) >= itemWidth) {
+                currentPosition += itemWidth;
+                
+                // 첫 번째 아이템을 마지막으로 이동 (DOM 재정렬)
+                const firstItem = sliderContainer.firstElementChild;
+                sliderContainer.appendChild(firstItem);
+            }
+            
+            sliderContainer.style.transform = `translateX(${currentPosition}px)`;
+            
+            requestAnimationFrame(animateSlider);
+        }
+        
+        sliderContainer.style.display = 'flex';
+        sliderContainer.style.transition = 'none'; // 부드러운 애니메이션을 위해 CSS 트랜지션 제거
+        
+        requestAnimationFrame(animateSlider);
+    }
 });
