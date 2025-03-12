@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sliderContainer.appendChild(clone);
         });
 
-        // **초기 위치를 첫 번째 이미지 너비만큼 왼쪽으로 이동**
+        //초기 위치를 첫 번째 이미지 너비만큼 왼쪽으로 이동**
         const itemWidth = sliderItems[0].offsetWidth;
         let currentPosition = -itemWidth;  
         sliderContainer.style.transform = `translateX(${currentPosition}px)`;
@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
         sliderContainer.style.display = 'flex';
         sliderContainer.style.transition = 'transform 0.5s ease';        
         
-        requestAnimationFrame(animateSlider);
+        setTimeout(() => {
+            requestAnimationFrame(animateSlider);
+        }, 50); // 애니메이션 시작 지연
     }
 });
