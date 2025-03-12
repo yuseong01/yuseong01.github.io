@@ -257,14 +257,14 @@ nav {
         flex-direction: column;
         margin-top: 100px;
     }
-
-    .slider-container {
-        flex-direction: column;
-    }
     
     .left-side, .right-side {
         width: 100%;
         padding: 20px 0;
+    }
+
+    .slider-item{
+        width: 33.3%
     }
     
     .headline {
