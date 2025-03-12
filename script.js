@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (sliderContainer && sliderItems.length > 0) {
         // 무한 스크롤 
-        const firstItemsClone = Array.from(sliderItems).slice(0, 3).map(item => {
+        const allItemsClone = Array.from(sliderItems).map(item => {
             const clone = item.cloneNode(true);
             return clone;
         });
 
-        // 복제된 아이템을 슬라이더 끝에 추가
-        firstItemsClone.forEach(clone => {
+         // 복제된 아이템을 슬라이더 끝에 추가
+         allItemsClone.forEach(clone => {
             sliderContainer.appendChild(clone);
         });
 
