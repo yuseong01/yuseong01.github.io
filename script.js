@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let currentPosition = -itemWidth;  
         sliderContainer.style.transform = `translateX(${currentPosition}px)`;
  
+        // 트랜지션을 추가하기 전에 복제된 아이템들이 첫 번째 이미지 뒤에 배치되도록 설정
+        setTimeout(() => {
+            sliderContainer.style.transition = 'transform 0.5s ease';
+        }, 50);
         
         function animateSlider() {
             currentPosition -= slideSpeed;
@@ -67,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         sliderContainer.style.display = 'flex';
-        sliderContainer.style.transition = 'transform 0.5s ease';        
+        //sliderContainer.style.transition = 'transform 0.5s ease';        
         
         setTimeout(() => {
             requestAnimationFrame(animateSlider);
