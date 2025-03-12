@@ -40,9 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // 첫 번째 이미지가 완전히 사라지면 위치 리셋
             const itemWidth = sliderItems[0].offsetWidth;
-            if (Math.abs(currentPosition) >= itemWidth) {
-                currentPosition += itemWidth;
-                
+            if (Math.abs(currentPosition) >= itemWidth) {                
                 // 첫 번째 아이템을 마지막으로 이동 (DOM 재정렬)
                 const firstItem = sliderContainer.firstElementChild;
                 sliderContainer.appendChild(firstItem);
