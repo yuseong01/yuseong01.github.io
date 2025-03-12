@@ -234,7 +234,7 @@ nav {
     padding: 0 5%;
     padding-bottom: 40px;
     transition: transform 0.5s ease;
-    width: 300%; /* 이미지 슬라이더의 컨테이너는 3배 크기 */
+    width: 100%;
     align-items: flex-start;  
 }
 
