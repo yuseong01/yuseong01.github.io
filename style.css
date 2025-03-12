@@ -234,19 +234,20 @@ nav {
     padding: 0 5%;
     padding-bottom: 40px;
     width: 100%;
-    align-items: flex-start;  
+    align-items: center;
+    gap: 2px;  
 }
 
 .slider-item {
     width: 33.333%; 
     flex-shrink: 0; 
-    padding: 30px;
+    padding: 10px;
 }
 
 .slider-item img {
     width: 100%;
-    max-height: 300px;
-    object-fit: contain;
+    height: 250px; /*max-height에서 height로 변경하고 크기 줄였음*/
+    object-fit: cover;
     display: block;
 }
 
@@ -263,7 +264,8 @@ nav {
     }
 
     .slider-item{
-        width: 33.3%
+        /*width: 33.3%*/
+        height: 200px;
     }
     
     .headline {
@@ -311,13 +313,20 @@ nav {
     /* nav {
         padding: 15px 5%;
     } */
-    
+
     .hero-content {
         margin-top: 80px;
         padding: 0 15px;
         padding-bottom: 30px;
     }
-    
+
+    .slider-item{
+        padding: 3px;
+    }
+
+    .slider-item img{
+        height: 150px;
+    }
     .headline {
         font-size: 28px;
         transform: translateY(1px);
