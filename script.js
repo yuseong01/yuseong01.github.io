@@ -43,16 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
         function animateSlider() {
             currentPosition -= slideSpeed;
             
-            // 첫 번째 이미지가 완전히 사라지면 위치 리셋
-            //const itemWidth = sliderItems[0].offsetWidth;
-            
+            // 첫 번째 이미지가 완전히 사라지면 위치 리셋            
             if (Math.abs(currentPosition) >= itemWidth) {                
+                // 트랜지션을 잠시 제거
+                sliderContainer.style.transition = 'none';
+
                 // 첫 번째 아이템을 마지막으로 이동 (DOM 재정렬)
                 const firstItem = sliderContainer.firstElementChild;
                 sliderContainer.appendChild(firstItem);
                 
                 //위치조정
                 currentPosition += itemWidth;
+
+                // 위치 재조정 후 트랜지션 재적용
+                setTimeout(() => {
+                    sliderContainer.style.transition = 'transform 0.5s ease'; // 트랜지션 다시 활성화
+                }, 50);
             }
             
             sliderContainer.style.transform = `translateX(${currentPosition}px)`;
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         sliderContainer.style.display = 'flex';
-        sliderContainer.style.transition = 'none'; // 부드러운 애니메이션을 위해 CSS 트랜지션 제거
+        sliderContainer.style.transition = 'transform 0.5s ease';        
         
         requestAnimationFrame(animateSlider);
     }
