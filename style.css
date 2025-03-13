@@ -240,13 +240,14 @@ nav {
 
 .slider-item {
     width: 33.333%; 
+    height: 250px;
     flex-shrink: 0; 
     padding: 10px;
+    
 }
 
 .slider-item img {
     width: 100%;
-    height: 250px; 
     object-fit: cover;
 }
 
