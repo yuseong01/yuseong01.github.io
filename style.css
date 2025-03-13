@@ -262,19 +262,18 @@ nav {
         padding: 20px 0;
     }
 
-    /* .slider-item{
+    .slider-item{
         height: 200px;
+    }
+
+    /* .slider-item{
+        padding: 3px;
     } */
 
-    .slider-item{
-        padding: 3px;
-    }
-
-    .slider-item img{
+    /* .slider-item img{
         height: 200px;
     }
-    
-    
+     */
     .headline {
         font-size: 32px;
         margin-bottom: 15px;
