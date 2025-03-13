@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
     let currentPosition = 0;
-    const slideSpeed = 0.5;
+    const slideSpeed = 0.7;
 
 
     if (sliderContainer && sliderItems.length > 0) {
