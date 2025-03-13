@@ -247,7 +247,7 @@ nav {
 .slider-item img {
     width: 100%;
     height: 250px; 
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* Responsive styles - Improved for mobile(태블릿) */
